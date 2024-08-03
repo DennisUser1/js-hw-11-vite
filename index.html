@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/js-hw-11-vite/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 11. Image Gallery Search App</title>
+    
+    <script type="module" crossorigin src="/js-hw-11-vite/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/js-hw-11-vite/assets/vendor-0fc460d7.js">
+    <link rel="stylesheet" href="/js-hw-11-vite/assets/vendor-4b066c51.css">
+    <link rel="stylesheet" href="/js-hw-11-vite/assets/index-9b989bf4.css">
+  </head>
+  <body>
+    <section class="main">
+      <div class="container">
+        <form class="form" id="search-form">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search images..."
+            autofocus 
+            autocomplete="off"
+            maxlength="30">
+          <button type="submit" id="search-submit">Search</button>
+        </form>
+        <span class="loader"></span>
+        <ul class="gallery"></ul>
+      </div>
+    </section>
+    
+  </body>
+</html>
