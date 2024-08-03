@@ -5,21 +5,187 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); 
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+  --base-font-family: 'Montserrat', 'Inter', 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  --base-font-size: 16px;
+  --line-height: 24px;
+  --font-weight: 400;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+ --color: #242424;
+ --background-color: rgba(255, 255, 255, 0.87);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --font-synthesis: none;
+  --text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--base-font-family);
+  color: rgba(46, 47, 66, 1);
+  min-height: 100vh;
+  background-color: lightgray;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main {
+  padding: 100px 0;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.form input {
+  border: 1px solid rgba(128, 128, 128, 1);
+  outline: none;
+  padding: 8px 15px;
+  color: inherit;
+  border-radius: 4px;
+}
+
+.form button {
+  background-color: rgba(78, 117, 255, 1);
+  border: none;
+  color: #ffffff;
+  padding: 8px 0;
+  width: 75px;
+  border-radius: 8px;
+  transition: .3s;
+}
+
+input,
+button {
+  font-family: var(--base-font-family);
+}
+
+.form button:hover {
+  background-color: rgba(108, 140, 255, 1);
+}
+
+.form input::placeholder {
+  color: rgba(128, 128, 128, 1);
+}
+.form input:hover {
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+.form input:focus {
+  border: 1px solid rgba(78, 117, 255, 1);
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.gallery .gallery-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 360px;
+  border: 1px solid rgba(128, 128, 128, 1);
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  object-fit: cover;
+}
+
+.gallery-figure {
+  margin: 0;
+}
+
+.gallery .info {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+  background-color: transparent;
+  padding-block: 4px;
+}
+
+.gallery .info > li {
+  color: #424242;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+}
+
+.gallery .info > li > span {
+  text-align: center;
+  display: block;
+  color: #424242;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.gallery-animation {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.gallery-animation:hover,
+.gallery-animation:focus,
+.gallery-animation:active {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+/* LOADER https://cssloaders.github.io/ */
+
+.loader {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+.loader:before, .loader:after {
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+
+.loader:after {
+  box-shadow: 0 2px 0 #FF3D00 inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
 }
