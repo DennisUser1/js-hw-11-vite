@@ -40,6 +40,8 @@ form.addEventListener('submit', event => {
       loader.style.display = 'none';
       if (error.message == 'No images found') {
         iziToast.warning({
+          icon: 'svg',
+          iconUrl: './img/Warning.svg',
           title: 'Warning',
           position: 'topRight',
           message: 'Sorry, there are no images matching your search query. Please try again!',
