@@ -10,7 +10,7 @@ const loader = document.querySelector('.loader');
 
 // form.addEventListener('submit', debounce(onSearch, 300));
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', event => { 
   event.preventDefault();
   const query = input.value.trim();
 

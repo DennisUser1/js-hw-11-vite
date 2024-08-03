@@ -25,5 +25,9 @@ return fetch(url)
     throw new Error('No images found');
   }
   return data;
+})
+.catch(error => {
+  console.error('Error fetching images:', error);
+  throw error; 
 });
 };
